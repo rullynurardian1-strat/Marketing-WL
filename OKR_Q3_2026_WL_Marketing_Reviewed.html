@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKR Q3 2026 — WL Marketing Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #1A2240;
+  --navy2:   #253060;
+  --orange:  #F56E28;
+  --obg:     #FFF0E9;
+  --amber:   #F5A128;
+  --abg:     #FFF8ED;
+  --white:   #FFFFFF;
+  --surf:    #F5F4F1;
+  --bdr:     #E4E4EB;
+  --muted:   #9299AE;
+  --text:    #1A2240;
+  --soft:    #5A6480;
+  --csm:     #E85C1A;
+  --cda:     #2260E8;
+  --cdes:    #7B35E8;
+  --cseot:   #0A9E6A;
+  --cseow:   #0891B2;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--surf);color:var(--text);font-size:14px;line-height:1.6}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:200;background:var(--navy);height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 16px rgba(26,34,64,.25)}
+.tb-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:13px}
+.tb-pill{background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;letter-spacing:.04em}
+.tb-nav{display:flex;gap:2px}
+.tb-nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px;transition:all .15s}
+.tb-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+
+/* WRAP */
+.wrap{max-width:1060px;margin:0 auto;padding:28px 20px 60px}
+
+/* HERO */
+.hero{background:var(--navy);border-radius:18px;padding:28px 32px 24px;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-50px;top:-50px;width:220px;height:220px;border-radius:50%;background:var(--orange);opacity:.09}
+.hero::after{content:'';position:absolute;right:60px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:var(--amber);opacity:.07}
+.hero-tag{display:inline-block;background:var(--orange);color:#fff;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+.hero h1{font-size:22px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px}
+.hero-sub{color:rgba(255,255,255,.5);font-size:12px;margin-bottom:18px}
+.leg-row{display:flex;flex-wrap:wrap;gap:8px}
+.leg-chip{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border-radius:99px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.75)}
+.leg-chip .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* EDIT HINT */
+.ehint{background:var(--abg);border:1.5px solid var(--amber);border-radius:10px;padding:8px 14px;font-size:11.5px;color:#7A4800;margin-bottom:22px;display:flex;align-items:center;gap:8px}
+
+/* EDITABLE */
+[contenteditable]{outline:none;cursor:text}
+.ev{display:inline-block;background:rgba(245,161,40,.15);color:#854D00;border-bottom:2px solid var(--amber);padding:0 3px;border-radius:3px;font-weight:700;min-width:18px;transition:background .15s,box-shadow .15s}
+.ev:hover{background:rgba(245,161,40,.28)}
+.ev:focus{background:rgba(245,161,40,.38);box-shadow:0 0 0 2.5px var(--amber);border-radius:4px}
+.okr-hdr .ev{background:rgba(245,161,40,.22);color:#FFDD80;border-color:#FFB340}
+.okr-hdr .ev:focus{box-shadow:0 0 0 2px #FFB340}
+
+/* SECTION HDR */
+.sec-hdr{display:flex;align-items:center;gap:12px;margin:28px 0 16px}
+.sec-hdr h2{font-size:13px;font-weight:800;white-space:nowrap}
+.sec-hdr .ln{flex:1;height:1px;background:var(--bdr)}
+
+/* SUMMARY */
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+.sum-card{background:var(--white);border-radius:14px;padding:18px 20px;border:1.5px solid var(--bdr);position:relative;overflow:hidden;transition:box-shadow .2s,border-color .2s}
+.sum-card:hover{box-shadow:0 4px 20px rgba(26,34,64,.08);border-color:var(--orange)}
+.sum-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);border-radius:4px 0 0 4px}
+.sum-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--orange);color:#fff;font-weight:800;font-size:12px;border-radius:7px;margin-bottom:8px}
+.sum-card h3{font-size:12px;font-weight:700;line-height:1.45;margin-bottom:10px}
+.sum-krs{list-style:none;display:flex;flex-direction:column;gap:5px}
+.sum-kr{display:flex;gap:7px;align-items:flex-start;font-size:11px;color:var(--soft);line-height:1.45}
+.kr-chip{flex-shrink:0;width:17px;height:17px;background:var(--obg);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--orange);margin-top:1px}
+
+/* DIVIDER */
+.divider{text-align:center;position:relative;margin:8px 0 24px}
+.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--bdr)}
+.divider span{position:relative;background:var(--surf);padding:0 14px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+/* OKR BLOCK */
+.okr-block{background:var(--white);border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 1px 6px rgba(26,34,64,.06);border:1.5px solid var(--bdr)}
+.okr-hdr{background:var(--navy);padding:22px 28px 18px;position:relative;overflow:hidden}
+.okr-hdr::after{content:'';position:absolute;right:-24px;top:-24px;width:130px;height:130px;border-radius:50%;background:var(--orange);opacity:.1}
+.okr-hdr-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.okr-num{width:42px;height:42px;flex-shrink:0;background:var(--orange);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;position:relative;z-index:1}
+.okr-lw{flex:1;position:relative;z-index:1}
+.okr-eye{font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.okr-title{font-size:14px;font-weight:700;color:#fff;line-height:1.4}
+.okr-period{flex-shrink:0;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px;white-space:nowrap;position:relative;z-index:1}
+.okr-obj{font-size:11.5px;color:rgba(255,255,255,.5);font-style:italic;margin-top:8px;position:relative;z-index:1}
+
+/* META */
+.okr-meta{display:grid;grid-template-columns:1fr 1fr;border-bottom:1.5px solid var(--bdr)}
+.mc{padding:12px 20px;border-right:1.5px solid var(--bdr)}
+.mc:last-child{border-right:none}
+.ml{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:4px}
+.mv{font-size:11.5px;line-height:1.5}
+
+/* KR */
+.kr-list{padding:18px 24px;display:flex;flex-direction:column;gap:0}
+.kr-item{border-left:2px solid var(--bdr);padding-left:16px;padding-bottom:20px;margin-left:8px;position:relative}
+.kr-item:last-child{padding-bottom:0}
+.kr-item::before{content:'';position:absolute;left:-5px;top:5px;width:8px;height:8px;background:var(--orange);border-radius:50%}
+.kr-eye{font-size:9px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.kr-t{font-size:13px;font-weight:700;line-height:1.45;margin-bottom:4px}
+.kr-b{font-size:11px;color:var(--soft);margin-bottom:8px}
+.kr-b strong{color:var(--navy)}
+.sub-krs{padding-left:12px;display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.sub-kr{display:flex;gap:8px;font-size:11.5px;color:var(--soft)}
+.sub-lbl{font-weight:700;color:var(--navy2);white-space:nowrap;font-size:10px;margin-top:2px}
+
+/* KRRB toggle */
+.krrb-btn{display:inline-flex;align-items:center;gap:6px;border:none;background:none;cursor:pointer;font-family:inherit;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:3px 0;margin-top:6px;transition:color .15s}
+.krrb-btn:hover{color:var(--navy)}
+.krrb-btn .arr{display:inline-block;transition:transform .2s;font-size:13px;line-height:1}
+.krrb-btn.open .arr{transform:rotate(90deg)}
+
+/* KRRB box */
+.krrb-box{margin-top:8px;background:var(--surf);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:9px;border:1px solid var(--bdr)}
+.krrb-box.hidden{display:none}
+.krrb-row{display:flex;gap:8px;align-items:flex-start}
+.kc{flex-shrink:0;font-size:9.5px;font-weight:700;color:var(--muted);font-family:monospace;padding-top:3px;min-width:44px}
+.rp{flex-shrink:0;padding:2px 8px;border-radius:99px;font-size:9.5px;font-weight:700;white-space:nowrap}
+.rp-sm{background:#FFEEE6;color:#B83B0A}
+.rp-da{background:#EFF6FF;color:#1B4DC4}
+.rp-des{background:#F3F0FF;color:#5B21B6}
+.rp-seot{background:#EDFAF5;color:#065F46}
+.rp-seow{background:#E0F4FD;color:#075985}
+.tp{flex-shrink:0;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.tp-i{background:var(--navy);color:#fff}
+.tp-s{background:#E8EAF0;color:#6B7280}
+.tp-d{background:#FEF3C7;color:#92400E;border:1px dashed #D97706}
+.kb{flex:1}
+.kt{font-size:11.5px;color:var(--text);line-height:1.5}
+.ke{font-size:10px;color:var(--muted);font-style:italic;margin-top:2px}
+
+/* ROLE SECTION */
+.role-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.role-tab{padding:7px 14px;border-radius:99px;font-size:12px;font-weight:700;border:2px solid var(--bdr);background:var(--white);color:var(--soft);cursor:pointer;transition:all .15s;font-family:inherit}
+.role-tab:hover{border-color:var(--orange);color:var(--navy)}
+.rt-sm{border-color:var(--csm);background:#FFEEE6;color:var(--csm)}
+.rt-da{border-color:var(--cda);background:#EFF6FF;color:var(--cda)}
+.rt-des{border-color:var(--cdes);background:#F3F0FF;color:var(--cdes)}
+.rt-seot{border-color:var(--cseot);background:#EDFAF5;color:var(--cseot)}
+.rt-seow{border-color:var(--cseow);background:#E0F4FD;color:var(--cseow)}
+.role-panel{display:none;background:var(--white);border-radius:16px;padding:20px 22px;border:1.5px solid var(--bdr)}
+.role-panel.active{display:block}
+.rph{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1.5px solid var(--bdr);margin-bottom:14px}
+.rpi{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px}
+.rph h3{font-size:15px;font-weight:800}
+.rph .rsub{font-size:11px;color:var(--muted);margin-top:1px}
+.rg{margin-bottom:14px}
+.rgl{font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.rgl::after{content:'';flex:1;height:1px;background:var(--bdr)}
+.rt{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bdr)}
+.rt:last-child{border-bottom:none;padding-bottom:0}
+.rc{flex-shrink:0;font-size:9.5px;font-weight:700;color:var(--muted);font-family:monospace;padding-top:3px;min-width:70px}
+.rtxt{font-size:12px;color:var(--text);line-height:1.5}
+.revi{font-size:10.5px;color:var(--muted);font-style:italic;margin-top:2px}
+
+/* FOOTER */
+.footer{text-align:center;padding:24px 0 8px;font-size:11px;color:var(--muted);border-top:1.5px solid var(--bdr);margin-top:28px}
+
+/* INFO BOX */
+.info-box{background:var(--abg);border:1px solid var(--amber);border-radius:8px;padding:8px 12px;margin-bottom:14px;margin-left:24px;font-size:11px;color:#7A4800}
+
+@media(max-width:640px){
+  .sum-grid{grid-template-columns:1fr}
+  .okr-meta{grid-template-columns:1fr}
+  .mc{border-right:none;border-bottom:1.5px solid var(--bdr)}
+  .mc:last-child{border-bottom:none}
+  .tb-nav{display:none}
+  .wrap{padding:16px 14px 48px}
+  .okr-hdr{padding:16px 18px 14px}
+  .okr-hdr-top{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="tb-brand">
+    <span>OKR Q3 2026</span>
+    <span style="color:rgba(255,255,255,.3)">·</span>
+    <span>WL Marketing Team</span>
+    <span class="tb-pill">Jul – Sep 2026</span>
+  </div>
+  <nav class="tb-nav">
+    <a href="#summary">Ringkasan</a>
+    <a href="#okr1">OKR 1</a>
+    <a href="#okr2">OKR 2</a>
+    <a href="#okr3">OKR 3</a>
+    <a href="#okr4">OKR 4</a>
+    <a href="#roles">Per Role</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-tag">Stimulator &amp; Persuasion Framework · Enabler Model</span>
+  <h1>OKR Q3 2026<br>WL Marketing Team</h1>
+  <p class="hero-sub">Flores Digital Labs · 1 Juli – 30 September 2026</p>
+  <div class="leg-row">
+    <div class="leg-chip"><span class="dot" style="background:var(--orange)"></span>Objective — Payung Kualitatif</div>
+    <div class="leg-chip"><span class="dot" style="background:var(--amber)"></span>Key Result — Kuantitatif &amp; Outcome-based</div>
+    <div class="leg-chip"><span class="dot" style="background:#9299AE"></span>KRRB — Eksekusi per Role</div>
+  </div>
+</div>
+
+<div class="ehint">
+  ✏️&nbsp;Klik angka yang <span style="background:rgba(245,161,40,.2);border-bottom:2px solid var(--amber);padding:0 4px;border-radius:3px;font-weight:700;color:#7A4800">disorot amber</span> untuk mengedit target langsung di dokumen ini.
+</div>
+
+<!-- ═══ SUMMARY ═══ -->
+<div id="summary">
+  <div class="sec-hdr"><h2>Ringkasan OKR</h2><div class="ln"></div></div>
+  <div class="sum-grid">
+
+    <div class="sum-card">
+      <div class="sum-badge">1</div>
+      <h3>Peningkatan Akuisisi Customer Baru (FTC) menjadi <strong>1.500 Usage</strong> — AOC Program, per 30 Sep 2026</h3>
+      <ul class="sum-krs">
+        <li class="sum-kr"><span class="kr-chip">1</span>Capai 15 Aktivasi Program AOC di operator aktif</li>
+        <li class="sum-kr"><span class="kr-chip">2</span>Turunkan gap usage rate AOC dari 43% → 27%</li>
+        <li class="sum-kr"><span class="kr-chip">3</span>Capai 5 Operator Graduate Stage (Fase 2 — 100% mandiri)</li>
+      </ul>
+    </div>
+
+    <div class="sum-card">
+      <div class="sum-badge">2</div>
+      <h3>Peningkatan Traffic Organic sebesar <strong>21%</strong>, seluruh operator aktif, per 30 Sep 2026</h3>
+      <ul class="sum-krs">
+        <li class="sum-kr"><span class="kr-chip">1</span>110 artikel baru/optimasi terbit</li>
+        <li class="sum-kr"><span class="kr-chip">2</span>Engaged Sessions artikel naik 30% (rute &amp; non-rute)</li>
+      </ul>
+    </div>
+
+    <div class="sum-card">
+      <div class="sum-badge">3</div>
+      <h3>Peningkatan Retention Rate User menjadi <strong>35%</strong>, seluruh operator aktif, per 30 Sep 2026</h3>
+      <ul class="sum-krs">
+        <li class="sum-kr"><span class="kr-chip">1</span>Peluncuran 5 Program Retention-base</li>
+        <li class="sum-kr"><span class="kr-chip">2</span>Usage Retention program ≥50% per program</li>
+        <li class="sum-kr"><span class="kr-chip">3</span>5 Digital Kit tersedia sesuai SLA per program</li>
+      </ul>
+    </div>
+
+    <div class="sum-card">
+      <div class="sum-badge">4</div>
+      <h3>Standarisasi: <strong>2 Dashboard Internal</strong> &amp; <strong>1 Dokumen CWV</strong>, selesai akhir Juli 2026</h3>
+      <ul class="sum-krs">
+        <li class="sum-kr"><span class="kr-chip">1</span>Dashboard PAM-CAM &amp; Performance Operator live (real-time)</li>
+        <li class="sum-kr"><span class="kr-chip">2</span>Rekomendasi CWV disahkan ke tim Engineering</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"><span>Detail Lengkap — OKR · KR · KRRB</span></div>
+
+<!-- ═══ OKR 1 ═══ -->
+<div class="okr-block" id="okr1">
+  <div class="okr-hdr">
+    <div class="okr-hdr-top">
+      <div style="display:flex;gap:12px;align-items:flex-start;flex:1">
+        <div class="okr-num">1</div>
+        <div class="okr-lw">
+          <div class="okr-eye">OKR 1 — Akuisisi FTC</div>
+          <div class="okr-title">Peningkatan Akuisisi Customer Baru (FTC) menjadi <span class="ev" contenteditable="true">1.500</span> Usage dari total Aktivasi Program AOC seluruh operator aktif, per 30 September 2026</div>
+        </div>
+      </div>
+      <span class="okr-period">1 Jul – 30 Sep 2026</span>
+    </div>
+    <div class="okr-obj">Menjadi mesin akuisisi FTC yang kontribusinya terukur jelas pada seluruh portfolio operator</div>
+  </div>
+  <div class="okr-meta">
+    <div class="mc"><div class="ml">📊 Baseline</div><div class="mv">FTC Usage Q2 2026 — ~<span class="ev" contenteditable="true">1.000</span> usage, ~<span class="ev" contenteditable="true">10</span> operator aktif (+<span class="ev" contenteditable="true">50</span>%)</div></div>
+    <div class="mc"><div class="ml">✅ Evidence</div><div class="mv">Laporan bulanan DA (Dashboard Performance Operator) — breakdown FTC ter-atribusi campaign vs total FTC, dipakai untuk grading akhir Q3</div></div>
+  </div>
+  <div class="kr-list">
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 1.1</div>
+      <div class="kr-t">Capai <span class="ev" contenteditable="true">15</span> Aktivasi Program AOC di operator aktif, per 30 September 2026</div>
+      <div class="kr-b"><strong>Baseline:</strong> <span class="ev" contenteditable="true">10</span> Program AOC di <span class="ev" contenteditable="true">10</span> Operator (Q2 2026)</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">1.1.1</span><span class="rp rp-sm">SM</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt"><span class="ev" contenteditable="true">15</span> program aktivasi akuisisi AOC live, tersebar di seluruh operator aktif.</div><div class="ke">Evidence: campaign brief + laporan performance per program</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">1.1.2</span><span class="rp rp-da">DA</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Laporan FTC total vs FTC ter-atribusi campaign per operator, terbit mingguan (≥<span class="ev" contenteditable="true">12</span> laporan sepanjang Q3).</div><div class="ke">Evidence: link report mingguan</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 1.2</div>
+      <div class="kr-t">Menurunkan gap usage rate program AOC dari <span class="ev" contenteditable="true">43</span>% menjadi <span class="ev" contenteditable="true">27</span>% (usage rate naik dari <span class="ev" contenteditable="true">57</span>% → <span class="ev" contenteditable="true">73</span>%), per 30 September 2026</div>
+      <div class="kr-b"><strong>Baseline:</strong> Gap usage rate Q2 2026 = <span class="ev" contenteditable="true">43</span>% · Usage rate aktual = <span class="ev" contenteditable="true">56,72</span>% (1.021 dari 1.800 kuota)</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">1.2.1</span><span class="rp rp-sm">SM</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Setiap program AOC memiliki mekanisme promosi aktif (reminder, push notif, komunikasi langsung ke user) selama periode berjalan untuk mendorong redemption.</div><div class="ke">Evidence: dokumentasi mekanisme promosi per program + laporan redemption rate bulanan</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">1.2.2</span><span class="rp rp-des">Designer</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Design Kit (<span class="ev" contenteditable="true">1</span> Pop-up + <span class="ev" contenteditable="true">1</span> Banner In-App + <span class="ev" contenteditable="true">5</span> Banner in Artikel) untuk <span class="ev" contenteditable="true">15</span> operator diproduksi &amp; dioptimasi — CTA jelas, konsisten dengan identitas masing-masing operator.</div><div class="ke">Evidence: link asset kit per operator</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">1.2.3</span><span class="rp rp-des">Designer</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Conversion rate Design Kit mencapai <span class="ev" contenteditable="true">40</span>% secara keseluruhan program AOC (Baseline Q2 2026: <span class="ev" contenteditable="true">34,67</span>%).</div><div class="ke">Evidence: laporan CTR/konversi per asset</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">1.2.4</span><span class="rp rp-da">DA</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Laporan gap usage rate per program AOC, update bulanan (Juli, Agustus, September), dengan early warning flag jika ada program di bawah <span class="ev" contenteditable="true">50</span>% di pertengahan periode.</div><div class="ke">Evidence: link report bulanan + log early warning</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">1.2.5</span><span class="rp rp-seot">SEO Tech</span><span class="tp tp-s">SUPPORTING</span>
+          <div class="kb"><div class="kt">Tap-in CMS (popup/banner in-app) aktif terpasang untuk setiap program AOC sesuai jadwal live.</div><div class="ke">Evidence: log konfigurasi CMS per program</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 1.3</div>
+      <div class="kr-t">Capai <span class="ev" contenteditable="true">5</span> Operator Graduate Stage — kemandirian aktivasi AOC (cost-share 50:50 → 100% mandiri operator), per 30 September 2026</div>
+      <div class="kr-b"><strong>Baseline:</strong> 0% Fase 2 pada Q2 2026. Kandidat Graduation: Kruzz (<span class="ev" contenteditable="true">96,5</span>%), Sumber Jaya (<span class="ev" contenteditable="true">100</span>%), Sabila Shuttle (<span class="ev" contenteditable="true">99,33</span>%), Gracias (<span class="ev" contenteditable="true">100</span>%) + 1 kandidat dari Sustain &amp; Push Q3</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">1.3.1</span><span class="rp rp-sm">SM</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Tawarkan AOC ke <span class="ev" contenteditable="true">15</span> operator; dorong <span class="ev" contenteditable="true">5</span> operator naik Fase 1 → Fase 2 (4 kandidat Q2 + 1 dari Sustain &amp; Push Q3).</div><div class="ke">Evidence: dokumen kesepakatan fase per operator (target 5 dokumen)</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">1.3.2</span><span class="rp rp-da">DA</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Laporan % kemandirian aktivasi &amp; beban budget FDL per FTC per operator, terbit bulanan (3 laporan).</div><div class="ke">Evidence: link report bulanan</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ OKR 2 ═══ -->
+<div class="okr-block" id="okr2">
+  <div class="okr-hdr">
+    <div class="okr-hdr-top">
+      <div style="display:flex;gap:12px;align-items:flex-start;flex:1">
+        <div class="okr-num">2</div>
+        <div class="okr-lw">
+          <div class="okr-eye">OKR 2 — Traffic Organic</div>
+          <div class="okr-title">Peningkatan Traffic Organic yang Masuk sebesar <span class="ev" contenteditable="true">21</span>%, seluruh operator aktif, per 30 September 2026</div>
+        </div>
+      </div>
+      <span class="okr-period">1 Jul – 30 Sep 2026</span>
+    </div>
+    <div class="okr-obj">Mendorong pertumbuhan trafik organik secara berkelanjutan sebagai kanal akuisisi mandiri di seluruh portfolio operator</div>
+  </div>
+  <div class="okr-meta">
+    <div class="mc"><div class="ml">📊 Baseline</div><div class="mv">Organic traffic seluruh operator aktif, Q2 2026 — <span class="ev" contenteditable="true">328.782</span> sessions · Artikel produksi: <span class="ev" contenteditable="true">107</span> artikel (Engaged Sessions Rute: <span class="ev" contenteditable="true">12.440</span> · Non-rute: <span class="ev" contenteditable="true">14.290</span>)</div></div>
+    <div class="mc"><div class="ml">✅ Evidence</div><div class="mv">Laporan Search Console/Analytics per operator (akumulasi Jul–Sep 2026) + laporan GA Engaged Sessions per artikel produksi tim SEO, dibandingkan terhadap baseline Q2 2026</div></div>
+  </div>
+  <div class="kr-list">
+    <div class="info-box">ℹ️ OKR 2 dieksekusi sepenuhnya oleh <strong>SEO Writer</strong> &amp; <strong>SEO Technical</strong>. Detail tugas lihat seksi <strong>KRRB Per Role</strong> di bawah.</div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 2.1</div>
+      <div class="kr-t"><span class="ev" contenteditable="true">110</span> artikel baru/optimasi terbit, tersebar di seluruh operator aktif, per 30 September 2026</div>
+      <div class="kr-b"><strong>Baseline:</strong> <span class="ev" contenteditable="true">108</span> artikel Q2 2026 · Dieksekusi: SEO Writer</div>
+    </div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 2.2</div>
+      <div class="kr-t">Peningkatan Engaged Sessions artikel produksi tim SEO sebesar <span class="ev" contenteditable="true">30</span>% dari baseline Q2 2026, per 30 September 2026</div>
+      <div class="kr-b"><strong>Baseline:</strong> <span class="ev" contenteditable="true">107</span> artikel produksi · Dieksekusi: SEO Writer + SEO Technical</div>
+      <div class="sub-krs">
+        <div class="sub-kr"><span class="sub-lbl">KR 2.2.1</span><span>Engaged Sessions artikel rute naik <span class="ev" contenteditable="true">30</span>% — dari <span class="ev" contenteditable="true">12.440</span> menjadi ≥<span class="ev" contenteditable="true">16.172</span> sessions</span></div>
+        <div class="sub-kr"><span class="sub-lbl">KR 2.2.2</span><span>Engaged Sessions artikel non-rute naik <span class="ev" contenteditable="true">30</span>% — dari <span class="ev" contenteditable="true">14.290</span> menjadi ≥<span class="ev" contenteditable="true">18.577</span> sessions</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OKR 3 ═══ -->
+<div class="okr-block" id="okr3">
+  <div class="okr-hdr">
+    <div class="okr-hdr-top">
+      <div style="display:flex;gap:12px;align-items:flex-start;flex:1">
+        <div class="okr-num">3</div>
+        <div class="okr-lw">
+          <div class="okr-eye">OKR 3 — Repeat User &amp; Retention</div>
+          <div class="okr-title">Peningkatan Retention Rate User Menjadi <span class="ev" contenteditable="true">35</span>%, seluruh operator aktif, per 30 September 2026</div>
+        </div>
+      </div>
+      <span class="okr-period">1 Jul – 30 Sep 2026</span>
+    </div>
+    <div class="okr-obj">Meningkatkan jumlah dan kualitas repeat user pada seluruh operator melalui program retensi yang terstruktur</div>
+  </div>
+  <div class="okr-meta">
+    <div class="mc"><div class="ml">📊 Baseline</div><div class="mv">Retention rate gabungan operator aktif, Q2 2026 (Apr–Jun) — rata-rata <span class="ev" contenteditable="true">30</span>%</div></div>
+    <div class="mc"><div class="ml">✅ Evidence</div><div class="mv">Laporan retention rate bulanan dari DA (3 laporan: Juli, Agustus, September), dibandingkan terhadap baseline Q2 2026</div></div>
+  </div>
+  <div class="kr-list">
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 3.1</div>
+      <div class="kr-t">Peluncuran <span class="ev" contenteditable="true">5</span> program Retention-base pada seluruh operator aktif, per 30 September 2026</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">3.1.1</span><span class="rp rp-sm">SM</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt"><span class="ev" contenteditable="true">5</span> program loyalty/retensi live, tersebar di seluruh operator aktif.</div><div class="ke">Evidence: campaign brief + laporan performance per program (5 dokumen)</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">3.1.2</span><span class="rp rp-da">DA</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Laporan retention rate bulanan + rekomendasi pasca-campaign (<span class="ev" contenteditable="true">3</span> laporan).</div><div class="ke">Evidence: link report Juli, Agustus, September</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 3.2</div>
+      <div class="kr-t">Usage Retention program mencapai <span class="ev" contenteditable="true">50</span>% per program (dari <span class="ev" contenteditable="true">5</span> program aktivasi retensi yang berjalan), per 30 September 2026</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">3.2.1</span><span class="rp rp-sm">SM</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Pastikan <span class="ev" contenteditable="true">5</span> program retensi memiliki kuota &amp; mekanisme redeem yang terdefinisi jelas sejak awal, sebagai basis perhitungan usage rate.</div><div class="ke">Evidence: dokumen setup program (kuota, periode, mekanisme) per program (5 dokumen)</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">3.2.2</span><span class="rp rp-seot">SEO Tech</span><span class="tp tp-s">SUPPORTING</span>
+          <div class="kb"><div class="kt">Tap-in CMS aktif (popup/banner in-app) terpasang sesuai jadwal live masing-masing program retensi.</div><div class="ke">Evidence: log konfigurasi CMS per program (5 entri)</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">3.2.3</span><span class="rp rp-seow">SEO Writer</span><span class="tp tp-s">SUPPORTING</span>
+          <div class="kb"><div class="kt"><span class="ev" contenteditable="true">1</span> konten pendukung per program retensi terbit (repeat-intent: jadwal terbaru, promo loyalty, rute langganan), terhubung ke program berjalan.</div><div class="ke">Evidence: link konten live + pemetaan ke program retensi masing-masing</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">3.2.4</span><span class="rp rp-da">DA</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">Laporan usage rate per program retensi, update bulanan (target: ≥<span class="ev" contenteditable="true">50</span>% per program per laporan).</div><div class="ke">Evidence: link report Juli, Agustus, September per program</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 3.3</div>
+      <div class="kr-t"><span class="ev" contenteditable="true">5</span> digital kit tersedia untuk <span class="ev" contenteditable="true">5</span> program aktivasi retensi, SLA produksi sesuai jadwal per program, per 30 September 2026</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">3.3.1</span><span class="rp rp-des">Designer</span><span class="tp tp-s">SUPPORTING</span>
+          <div class="kb"><div class="kt"><span class="ev" contenteditable="true">5</span> asset kit selesai sesuai SLA, masing-masing untuk 1 program retensi (banner in-app, banner in artikel, feed/reels, pop-up, Tent card A5, atau X Banner).</div><div class="ke">Evidence: link folder asset final per program (5 folder)</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">3.3.2</span><span class="rp rp-des">Designer</span><span class="tp tp-i">INDIVIDU</span>
+          <div class="kb"><div class="kt">1 library template asset retensi reusable dibangun dari <span class="ev" contenteditable="true">5</span> kit yang diproduksi, dipakai ulang <span class="ev" contenteditable="true">2</span> kali oleh SM.</div><div class="ke">Evidence: link library + log penggunaan</div></div>
+        </div>
+        <div class="krrb-row">
+          <span class="kc">3.3.3</span><span class="rp rp-sm">SM</span><span class="tp tp-s">SUPPORTING</span>
+          <div class="kb"><div class="kt">Brief program diberikan ke Designer minimal <span class="ev" contenteditable="true">7</span> hari sebelum tanggal live.</div><div class="ke">Evidence: timestamp brief masuk vs tanggal live per program</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ OKR 4 ═══ -->
+<div class="okr-block" id="okr4">
+  <div class="okr-hdr">
+    <div class="okr-hdr-top">
+      <div style="display:flex;gap:12px;align-items:flex-start;flex:1">
+        <div class="okr-num" style="background:#6B7280;font-size:10px;font-weight:800;text-align:center;line-height:1.2">STD</div>
+        <div class="okr-lw">
+          <div class="okr-eye">OKR 4 — Standarisasi</div>
+          <div class="okr-title">2 Dashboard Internal &amp; 1 Dokumen Standar CWV selesai akhir Juli 2026</div>
+        </div>
+      </div>
+      <span class="okr-period">Deadline: Akhir Jul 2026</span>
+    </div>
+    <div class="okr-obj">Membangun fondasi data dan standar teknis yang menjadi acuan bersama untuk seluruh program marketing</div>
+  </div>
+  <div class="okr-meta">
+    <div class="mc"><div class="ml">📊 Baseline</div><div class="mv">Tidak berlaku — OKR ini membangun deliverable baru, bukan mengukur pertumbuhan dari kondisi existing</div></div>
+    <div class="mc"><div class="ml">✅ Evidence</div><div class="mv">Link 2 dashboard live (PAM-CAM, Performance Operator) + dokumen rekomendasi CWV + bukti serah terima ke tim Engineering</div></div>
+  </div>
+  <div class="kr-list">
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 4.1</div>
+      <div class="kr-t">Dashboard PAM-CAM &amp; Dashboard Performance Operator rilis &amp; operasional, selesai minggu ke-3 Juli 2026</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">4.1.1</span><span class="rp rp-da">DA</span><span class="tp tp-d">STANDARDISASI</span>
+          <div class="kb"><div class="kt">2 dashboard fungsional live dengan SLA refresh data real-time — Dashboard PAM-CAM (scoring per operator) + Dashboard Performance Operator (Pax, Revenue, Komisi, FTC, Retention, Organic Traffic).</div><div class="ke">Evidence: link dashboard + dokumentasi metodologi</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kr-item">
+      <div class="kr-eye">KR 4.2</div>
+      <div class="kr-t">Rekomendasi standar Core Web Vitals (LCP, INP, CLS) tersusun &amp; disahkan ke tim Engineering, selesai minggu ke-3 Juli 2026</div>
+      <button class="krrb-btn open" onclick="toggleBox(this)"><span class="arr">›</span> KRRB</button>
+      <div class="krrb-box">
+        <div class="krrb-row">
+          <span class="kc">4.2.1</span><span class="rp rp-seot">SEO Tech</span><span class="tp tp-d">STANDARDISASI</span>
+          <div class="kb"><div class="kt">1 dokumen rekomendasi threshold CWV (LCP, INP, CLS) per website operator disusun &amp; diserahkan ke tim Engineering disertai tanda terima. Bersifat kolaboratif — implementasi ada di Engineering.</div><div class="ke">Evidence: dokumen rekomendasi + bukti serah terima dari Engineering</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ KRRB PER ROLE ═══ -->
+<div id="roles">
+  <div class="sec-hdr" style="margin-top:36px"><h2>KRRB Konsolidasi Per Role</h2><div class="ln"></div></div>
+
+  <div class="role-tabs">
+    <button class="role-tab rt-sm"  onclick="switchRole('sm',  this)">⚡ Strategic Marketing</button>
+    <button class="role-tab"        onclick="switchRole('da',  this)">📊 Data Analyst</button>
+    <button class="role-tab"        onclick="switchRole('des', this)">🎨 Designer</button>
+    <button class="role-tab"        onclick="switchRole('seot',this)">⚙️ SEO Technical</button>
+    <button class="role-tab"        onclick="switchRole('seow',this)">✍️ SEO Writer</button>
+  </div>
+
+  <!-- SM -->
+  <div id="panel-sm" class="role-panel active">
+    <div class="rph">
+      <div class="rpi" style="background:#FFF0E9">⚡</div>
+      <div><h3 style="color:var(--csm)">Strategic Marketing</h3><div class="rsub">6 KRRB aktif · OKR 1 &amp; OKR 3</div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 1 — Akuisisi FTC</div>
+      <div class="rt"><span class="rc">KRRB 1.1.1</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt"><span class="ev" contenteditable="true">15</span> program aktivasi akuisisi AOC live, tersebar di seluruh operator aktif.</div><div class="revi">Evidence: campaign brief + laporan performance per program</div></div></div>
+      <div class="rt"><span class="rc">KRRB 1.2.1</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Setiap program AOC memiliki mekanisme promosi aktif (reminder, push notif, komunikasi langsung) selama periode berjalan untuk mendorong redemption.</div><div class="revi">Evidence: dokumentasi mekanisme promosi per program + laporan redemption rate bulanan</div></div></div>
+      <div class="rt"><span class="rc">KRRB 1.3.1</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Tawarkan AOC ke <span class="ev" contenteditable="true">15</span> operator; dorong <span class="ev" contenteditable="true">5</span> operator naik Fase 1 → Fase 2.</div><div class="revi">Evidence: dokumen kesepakatan fase per operator (5 dokumen)</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 3 — Retention</div>
+      <div class="rt"><span class="rc">KRRB 3.1.1</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt"><span class="ev" contenteditable="true">5</span> program loyalty/retensi live, tersebar di seluruh operator aktif.</div><div class="revi">Evidence: campaign brief + laporan performance per program (5 dokumen)</div></div></div>
+      <div class="rt"><span class="rc">KRRB 3.2.1</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt"><span class="ev" contenteditable="true">5</span> program retensi memiliki kuota &amp; mekanisme redeem terdefinisi jelas sejak awal, sebagai basis perhitungan usage rate.</div><div class="revi">Evidence: dokumen setup program per program (5 dokumen)</div></div></div>
+      <div class="rt"><span class="rc">KRRB 3.3.3</span><div><span class="tp tp-s">SUPPORTING</span><div class="rtxt">Brief program diberikan ke Designer minimal <span class="ev" contenteditable="true">7</span> hari sebelum tanggal live.</div><div class="revi">Evidence: timestamp brief masuk vs tanggal live per program</div></div></div>
+    </div>
+  </div>
+
+  <!-- DA -->
+  <div id="panel-da" class="role-panel">
+    <div class="rph">
+      <div class="rpi" style="background:#EFF6FF">📊</div>
+      <div><h3 style="color:var(--cda)">Data Analyst</h3><div class="rsub">5 KRRB + 1 Standarisasi · OKR 1, OKR 3 &amp; OKR 4</div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 1 — Akuisisi FTC</div>
+      <div class="rt"><span class="rc">KRRB 1.1.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Laporan FTC total vs FTC ter-atribusi campaign per operator, terbit mingguan (≥<span class="ev" contenteditable="true">12</span> laporan sepanjang Q3).</div><div class="revi">Evidence: link report mingguan</div></div></div>
+      <div class="rt"><span class="rc">KRRB 1.2.4</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Laporan gap usage rate per program AOC, update bulanan, dengan early warning flag jika program di bawah <span class="ev" contenteditable="true">50</span>% di pertengahan periode.</div><div class="revi">Evidence: link report bulanan + log early warning</div></div></div>
+      <div class="rt"><span class="rc">KRRB 1.3.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Laporan % kemandirian aktivasi &amp; beban budget FDL per FTC per operator, terbit bulanan (3 laporan).</div><div class="revi">Evidence: link report bulanan</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 3 — Retention</div>
+      <div class="rt"><span class="rc">KRRB 3.1.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Laporan retention rate bulanan + rekomendasi pasca-campaign (<span class="ev" contenteditable="true">3</span> laporan).</div><div class="revi">Evidence: link report Juli, Agustus, September</div></div></div>
+      <div class="rt"><span class="rc">KRRB 3.2.4</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Laporan usage rate per program retensi, update bulanan (target: ≥<span class="ev" contenteditable="true">50</span>% per program per laporan).</div><div class="revi">Evidence: link report Juli, Agustus, September per program</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 4 — Standarisasi</div>
+      <div class="rt"><span class="rc">KRRB 4.1.1</span><div><span class="tp tp-d">STANDARDISASI</span><div class="rtxt">2 dashboard fungsional live, SLA refresh real-time — Dashboard PAM-CAM + Dashboard Performance Operator (Pax, Revenue, Komisi, FTC, Retention, Traffic). <strong>Deadline: minggu ke-3 Juli 2026.</strong></div><div class="revi">Evidence: link dashboard + dokumentasi metodologi</div></div></div>
+    </div>
+  </div>
+
+  <!-- DESIGNER -->
+  <div id="panel-des" class="role-panel">
+    <div class="rph">
+      <div class="rpi" style="background:#F3F0FF">🎨</div>
+      <div><h3 style="color:var(--cdes)">Designer</h3><div class="rsub">4 KRRB · OKR 1 &amp; OKR 3</div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 1 — Akuisisi FTC</div>
+      <div class="rt"><span class="rc">KRRB 1.2.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Design Kit (<span class="ev" contenteditable="true">1</span> Pop-up + <span class="ev" contenteditable="true">1</span> Banner In-App + <span class="ev" contenteditable="true">5</span> Banner in Artikel) untuk <span class="ev" contenteditable="true">15</span> operator diproduksi &amp; dioptimasi. CTA jelas, konsisten dengan identitas masing-masing operator.</div><div class="revi">Evidence: link asset kit per operator</div></div></div>
+      <div class="rt"><span class="rc">KRRB 1.2.3</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Conversion rate Design Kit mencapai <span class="ev" contenteditable="true">40</span>% secara keseluruhan program AOC (Baseline Q2: <span class="ev" contenteditable="true">34,67</span>%).</div><div class="revi">Evidence: laporan CTR/konversi per asset</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 3 — Retention</div>
+      <div class="rt"><span class="rc">KRRB 3.3.1</span><div><span class="tp tp-s">SUPPORTING</span><div class="rtxt"><span class="ev" contenteditable="true">5</span> asset kit selesai sesuai SLA per program retensi (banner in-app, banner in artikel, feed/reels, pop-up, Tent card A5, atau X Banner).</div><div class="revi">Evidence: link folder asset final per program (5 folder)</div></div></div>
+      <div class="rt"><span class="rc">KRRB 3.3.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">1 library template asset retensi reusable dibangun dari <span class="ev" contenteditable="true">5</span> kit, dipakai ulang <span class="ev" contenteditable="true">2</span> kali oleh SM.</div><div class="revi">Evidence: link library + log penggunaan</div></div></div>
+    </div>
+  </div>
+
+  <!-- SEO TECH -->
+  <div id="panel-seot" class="role-panel">
+    <div class="rph">
+      <div class="rpi" style="background:#EDFAF5">⚙️</div>
+      <div><h3 style="color:var(--cseot)">SEO Technical</h3><div class="rsub">2 KRRB + 1 Standarisasi + KR Owner OKR 2 · OKR 1, 2, 3 &amp; 4</div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 1 — Akuisisi FTC</div>
+      <div class="rt"><span class="rc">KRRB 1.2.5</span><div><span class="tp tp-s">SUPPORTING</span><div class="rtxt">Tap-in CMS (popup/banner in-app) aktif terpasang untuk setiap program AOC sesuai jadwal live.</div><div class="revi">Evidence: log konfigurasi CMS per program</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 2 — Traffic Organic</div>
+      <div class="rt"><span class="rc">OKR2 / KR2.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Optimasi teknikal (on-page, internal link, site speed, struktur) pendukung peningkatan Engaged Sessions — Rute ≥<span class="ev" contenteditable="true">16.172</span> sessions · Non-rute ≥<span class="ev" contenteditable="true">18.577</span> sessions.</div><div class="revi">Evidence: laporan audit teknikal per artikel + laporan GA Engaged Sessions</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 3 — Retention</div>
+      <div class="rt"><span class="rc">KRRB 3.2.2</span><div><span class="tp tp-s">SUPPORTING</span><div class="rtxt">Tap-in CMS aktif terpasang sesuai jadwal live masing-masing program retensi (<span class="ev" contenteditable="true">5</span> program).</div><div class="revi">Evidence: log konfigurasi CMS per program (5 entri)</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 4 — Standarisasi</div>
+      <div class="rt"><span class="rc">KRRB 4.2.1</span><div><span class="tp tp-d">STANDARDISASI</span><div class="rtxt">1 dokumen rekomendasi threshold CWV (LCP, INP, CLS) per website operator disusun &amp; diserahkan ke Engineering. <strong>Deadline: minggu ke-3 Juli 2026.</strong></div><div class="revi">Evidence: dokumen + bukti serah terima dari Engineering</div></div></div>
+    </div>
+  </div>
+
+  <!-- SEO WRITER -->
+  <div id="panel-seow" class="role-panel">
+    <div class="rph">
+      <div class="rpi" style="background:#E0F4FD">✍️</div>
+      <div><h3 style="color:var(--cseow)">SEO Writer</h3><div class="rsub">1 KRRB + KR Owner OKR 2 · OKR 2 &amp; OKR 3</div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 2 — Traffic Organic</div>
+      <div class="rt"><span class="rc">OKR2 / KR2.1</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt"><span class="ev" contenteditable="true">110</span> artikel baru/optimasi terbit, tersebar di seluruh operator aktif (baseline: <span class="ev" contenteditable="true">108</span> artikel Q2 2026).</div><div class="revi">Evidence: link artikel live + laporan traffic per artikel</div></div></div>
+      <div class="rt"><span class="rc">OKR2 / KR2.2</span><div><span class="tp tp-i">INDIVIDU</span><div class="rtxt">Produksi konten yang mendorong Engaged Sessions naik <span class="ev" contenteditable="true">30</span>% — Rute ≥<span class="ev" contenteditable="true">16.172</span> sessions · Non-rute ≥<span class="ev" contenteditable="true">18.577</span> sessions.</div><div class="revi">Evidence: laporan GA Engaged Sessions per artikel produksi tim SEO</div></div></div>
+    </div>
+    <div class="rg">
+      <div class="rgl">OKR 3 — Retention</div>
+      <div class="rt"><span class="rc">KRRB 3.2.3</span><div><span class="tp tp-s">SUPPORTING</span><div class="rtxt"><span class="ev" contenteditable="true">1</span> konten pendukung per program retensi terbit (repeat-intent: jadwal terbaru, promo loyalty, rute langganan).</div><div class="revi">Evidence: link konten live + pemetaan ke program retensi masing-masing</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  OKR Q3 2026 · WL Marketing Team · Flores Digital Labs · 1 Juli – 30 September 2026<br>
+  <span style="color:var(--amber)">✏️</span> Klik angka yang disorot untuk mengedit target
+</div>
+
+</div>
+
+<script>
+const roleMap = { sm:'rt-sm', da:'rt-da', des:'rt-des', seot:'rt-seot', seow:'rt-seow' };
+
+function toggleBox(btn) {
+  btn.classList.toggle('open');
+  const box = btn.nextElementSibling;
+  if (box) box.classList.toggle('hidden');
+}
+
+function switchRole(role, tab) {
+  document.querySelectorAll('.role-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.role-tab').forEach(t => { t.className = 'role-tab'; });
+  document.getElementById('panel-' + role).classList.add('active');
+  tab.classList.add(roleMap[role]);
+}
+
+document.querySelectorAll('[contenteditable]').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); el.blur(); }
+  });
+  el.addEventListener('focus', () => {
+    const r = document.createRange();
+    r.selectNodeContents(el);
+    const s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+  });
+});
+</script>
+</body>
+</html>
